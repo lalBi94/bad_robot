@@ -1,0 +1,11 @@
+[package]
+name = "bad_bot"
+description = "Reddit code challenge - Opperheimer"
+authors = ["General Zod"]
+license = "MIT"
+publish = false
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand="0.8.4"
