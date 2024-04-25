@@ -3,7 +3,6 @@ use crate::neighbors;
 use crate::smart_robot;
 use std::time::Instant;
 use std::{process, thread::sleep, time::Duration};
-
 pub mod maze_tools;
 
 #[derive(Debug, Clone)]

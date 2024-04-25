@@ -1,8 +1,7 @@
-pub mod smart_robot_move;
-use rand::Rng;
-
 use crate::indicator;
 use crate::neighbors;
+use rand::Rng;
+pub mod smart_robot_move;
 
 #[derive(Debug, Clone)]
 pub struct SmartRobot {

@@ -1,6 +1,7 @@
 use crate::indicator;
 use crate::smart_robot::smart_robot_move;
 use rand::{thread_rng, Rng};
+use std::{thread::sleep, time::Duration};
 
 pub struct MazeTools {}
 
@@ -38,6 +39,7 @@ impl MazeTools {
         maze
     }
     pub fn create_maze(width: &usize, height: &usize) -> Vec<String> {
+        assert!(*width > 0 && *height > 0 && *width % 2 == 0 && *height % 2 == 0);
         let check_width: usize = if *width % 2 == 0 { *width + 1 } else { *width };
 
         let mut blank: Vec<String> = Self::create_blank_maze(&check_width, height);
@@ -220,8 +222,9 @@ impl MazeTools {
                 }
             };
 
-            println!("Maze loading\n");
+            println!("Maze loading...\n");
             println!("{:#?}", display_blank());
+            sleep(Duration::from_millis(2));
             print!("\x1B[2J\x1B[1;1H");
         }
 

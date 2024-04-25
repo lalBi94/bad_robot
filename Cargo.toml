@@ -1,5 +1,5 @@
 [package]
-name = "bad_bot"
+name = "bad_robot"
 description = "Reddit code challenge - Opperheimer"
 authors = ["General Zod"]
 license = "MIT"
