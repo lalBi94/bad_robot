@@ -6,25 +6,21 @@ use std::{
 };
 
 fn main() {
-    let mut nb: usize = 1;
     let mut ticks: usize = 0;
-
-    let size: [usize; 2] = [100, 50];
-
     let mut last_moves_ticks: Vec<usize> = Vec::new();
     let mut best_move_ticks: Option<[usize; 2]> = None;
     let mut average: usize = 0;
+    let size: [usize; 2] = [40, 20];
+    let mut nb: usize = 1;
+    
     const WITH_DELAY_ON_RESOLVED_MAZE: bool = true;
-
     let exec_time: Instant = Instant::now();
 
     loop {
-        // You can try with ur own with vec!["0|1", ...]
+        // You can try with ur own with vec!["0 or 1", ...]
         let tray: Vec<String> = maze_tools::MazeTools::create_maze(&size[0], &size[1]);
-
-        println!("{:#?}", tray);
-
         let mut maze: maze::Maze = maze::Maze::new(tray);
+
         let result: Option<usize> = maze.explore(
             &nb,
             &mut ticks,

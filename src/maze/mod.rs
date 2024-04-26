@@ -172,7 +172,7 @@ impl Maze {
             let taken_direction = self.smart_robot.choose_direction(neighbors, false);
             self.smart_robot.set_direction(taken_direction);
 
-            if t == 20000 {
+            if t == (size[0]*size[1])*10 {
                 self.tray[self.smart_robot.current_case[0]][self.smart_robot.current_case[1]] =
                     indicator::Indicator::PLAYER(
                         self.smart_robot.direction.unwrap().get_arrow_from(),

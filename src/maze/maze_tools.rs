@@ -38,8 +38,9 @@ impl MazeTools {
 
         maze
     }
+    
     pub fn create_maze(width: &usize, height: &usize) -> Vec<String> {
-        assert!(*width > 0 && *height > 0 && *width % 2 == 0 && *height % 2 == 0);
+        assert!(*width >= 6 && *height >= 6 && *width % 2 == 0 && *height % 2 == 0, "Width and Height of this maze must both be even and >= 4 !");
         let check_width: usize = if *width % 2 == 0 { *width + 1 } else { *width };
 
         let mut blank: Vec<String> = Self::create_blank_maze(&check_width, height);
@@ -80,7 +81,7 @@ impl MazeTools {
             }
 
             if last_blank.eq(&blank) {
-                if redondance == 400 {
+                if redondance == width*height {
                     break;
                 } else {
                     redondance += 1
